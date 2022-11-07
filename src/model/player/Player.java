@@ -1,6 +1,8 @@
 package model.player;
 
-public interface Player {
+import model.TreasureHolder;
+
+public interface Player extends TreasureHolder {
   int getId();
   int getRow();
   int getCol();

@@ -6,7 +6,7 @@ import java.util.Map;
 import model.Treasure;
 import model.TreasureHolder;
 
-public class DungeonPlayer implements TreasureHolder, Player {
+public class DungeonPlayer implements Player {
   
   private int id;
   private int row;

@@ -9,17 +9,17 @@ import model.Direction;
 import model.Treasure;
 import model.TreasureHolder;
 
-public class Cave implements TreasureHolder, Location {
+public class LocationImpl implements Location {
   
   private Set<Direction> directions;
   private Map<Treasure, Integer> treasures;
   
-  public Cave() {
+  public LocationImpl() {
     this.directions = new HashSet<>();
     this.treasures = new HashMap<>();
   }
   
-  public Cave(Set<Direction> newDirections,
+  public LocationImpl(Set<Direction> newDirections,
       Map<Treasure, Integer> newTreasures) {
     this.directions = new HashSet<>();
     this.treasures = new HashMap<>();
@@ -34,8 +34,7 @@ public class Cave implements TreasureHolder, Location {
 
   @Override
   public void setDirectsSet(Set<Direction> newDirections) {
-    this.directions = new HashSet<>();
-    this.directions.addAll(newDirections);
+    this.directions = new HashSet<>(newDirections);
   }
 
   @Override
@@ -55,15 +54,14 @@ public class Cave implements TreasureHolder, Location {
 
   @Override
   public void setTreasureMap(Map<Treasure, Integer> newTreasures) {
-    this.treasures = new HashMap<>();
-    this.treasures.putAll(newTreasures);
+    if (!isTunnel()) {
+      this.treasures = new HashMap<>(newTreasures);
+    }
   }
 
   @Override
   public Map<Treasure, Integer> getTreasures() {
-    Map<Treasure, Integer> resMap = new HashMap<>();
-    resMap.putAll(this.treasures);
-    return resMap;
+    return new HashMap<>(this.treasures);
   }
 
   @Override
@@ -85,7 +83,17 @@ public class Cave implements TreasureHolder, Location {
 
   @Override
   public boolean canHoldTreasureNow() {
-    return true;
+    return !this.isTunnel();
+  }
+
+  @Override
+  public Set<Direction> getAllDirections() {
+    return new HashSet<Direction>(this.directions);
+  }
+
+  @Override
+  public boolean isTunnel() {
+    return this.directions.size() == 2;
   }
 
 }

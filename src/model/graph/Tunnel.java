@@ -9,7 +9,7 @@ import model.Direction;
 import model.Treasure;
 import model.TreasureHolder;
 
-public class Tunnel implements Location, TreasureHolder {
+public class Tunnel implements Location {
 
   Set<Direction> directions;
   
@@ -71,6 +71,16 @@ public class Tunnel implements Location, TreasureHolder {
   @Override
   public boolean canHoldTreasureNow() {
     return false;
+  }
+
+  @Override
+  public Set<Direction> getAllDirections() {
+    return new HashSet<>(this.directions);
+  }
+
+  @Override
+  public boolean isTunnel() {
+    return true;
   }
 
 }
