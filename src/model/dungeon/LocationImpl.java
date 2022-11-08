@@ -1,4 +1,4 @@
-package model.graph;
+package model.dungeon;
 
 import java.util.HashMap;
 import java.util.HashSet;

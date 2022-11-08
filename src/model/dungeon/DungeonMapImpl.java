@@ -1,4 +1,4 @@
-package model.graph;
+package model.dungeon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.Set;
 
 import model.Direction;
 import model.Treasure;
+import model.graph.Coordinate;
 
 public class DungeonMapImpl implements DungeonMap {
   
@@ -31,32 +32,6 @@ public class DungeonMapImpl implements DungeonMap {
   }
   
   private void setConnect(int r, int c) {
-    // based on inner connectivity & isWrapped
-    // have representation
-    // 0, 1, 2, 3 - N, E, S, W
-    boolean[][][] maps = new boolean[r][c][4];
-    for (int i = 0; i < r; ++i) {
-      for (int j = 0; j < c; ++j) {
-        for (int d = 0; d < 4; ++d) {
-          maps[i][j][d] = true; 
-        }
-      }
-    }
-    if (!isWrapped) {
-      for (int j = 0; j < c; ++j) {
-        maps[0][j][0] = false;
-        maps[r - 1][j][2] = false;
-      }
-      for (int i = 0; i < r; ++i) {
-        maps[i][0][3] = false;
-        maps[i][c - 1][1] = false;
-      }
-    }
-    // get MST
-    
-    // add to connectivity
-    
-    // reflect to model
     
   }
   

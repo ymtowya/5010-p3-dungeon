@@ -1,10 +1,11 @@
-package model.graph;
+package model.dungeon;
 
 import java.util.Map;
 import java.util.Set;
 
 import model.Direction;
 import model.Treasure;
+import model.graph.Coordinate;
 
 public interface DungeonMap {
   Map<Treasure, Integer> getTreasuresAt(Coordinate c);

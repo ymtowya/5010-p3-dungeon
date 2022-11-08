@@ -8,6 +8,11 @@ public class Coordinate {
     this.row = r;
     this.col = c;
   }
+  
+  public Coordinate(Coordinate oldCoor) {
+    this.row = oldCoor.getRow();
+    this.col = oldCoor.getCol();
+  }
 
   /**
    * @return the row
@@ -35,6 +40,24 @@ public class Coordinate {
    */
   public void setCol(int col) {
     this.col = col;
+  }
+  
+  @Override
+  public int hashCode() {
+    return this.row * 251 + this.col;
+  }
+  
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Coordinate)) {
+      return false;
+    }
+    Coordinate toCompare = (Coordinate) o;
+    if (row == toCompare.getRow()
+        && col == toCompare.getCol()) {
+      return true;
+    }
+    return false;
   }
   
 }
