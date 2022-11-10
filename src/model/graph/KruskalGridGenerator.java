@@ -1,14 +1,15 @@
 package model.graph;
 
+import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Random;
+import java.util.Queue;
 import java.util.Set;
 import java.util.function.IntPredicate;
-
 import model.Direction;
+import model.randomhelper.RandomHelper;
 
 public class KruskalGridGenerator implements GridGenerator {
 
@@ -18,18 +19,73 @@ public class KruskalGridGenerator implements GridGenerator {
   private boolean isWrapped;
   private boolean[][][] grid;
   private boolean[][][] adj;
+  private int[][] stepRec;
   private Coordinate start;
   private Coordinate end;
-  private Random random;
+  private RandomHelper rh;
   
-  public KruskalGridGenerator() {
+  
+  
+  public KruskalGridGenerator(RandomHelper newRh) {
     this.row = 5;
     this.col = 7;
     this.connectivity = 0;
     this.isWrapped = true;
     this.start = new Coordinate(2, 3);
     this.end = new Coordinate(0, 1);
-    this.random = new Random();
+    this.rh = newRh;
+  }
+  
+  private void setStepRecHelper(Coordinate c, int step) {
+    this.stepRec[c.row][c.col] = step;
+  }
+  
+  @Override
+  public int[][] getStepRecords() {
+    this.stepRec = new int[row][col];
+    Queue<Coordinate> thisLayer = new ArrayDeque<>();
+    Queue<Coordinate> nextLayer = new ArrayDeque<>();
+    Set<Coordinate> visited = new HashSet<>();
+    
+    thisLayer.add(start);
+    int currStep = 0;
+    while (!thisLayer.isEmpty()) {
+      while(!thisLayer.isEmpty()) {
+        Coordinate c = thisLayer.poll();
+        // set steps
+        setStepRecHelper(c, currStep);
+        visited.add(c);
+        // add children
+        for (int d = 0; d < 4; d++) {
+          if (canWalkAdj(c, d)) {
+            Coordinate nextChild = getNextCoor(c, d);
+            if (!visited.contains(nextChild)) {
+              nextLayer.add(nextChild);
+            }
+          }
+        }
+      }
+      // incre
+      ++currStep;
+      // set Next Layer
+      while(!nextLayer.isEmpty()) {
+        thisLayer.add(nextLayer.poll());
+      }
+    }
+    return this.stepRec;
+  }
+  
+  @Override
+  public String getStepRecordString() {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < col; ++j) {
+        sb.append(stepRec[i][j]);
+        sb.append(' ');
+      }
+      sb.append('\n');
+    }
+    return sb.toString();
   }
   
   @Override
@@ -60,8 +116,12 @@ public class KruskalGridGenerator implements GridGenerator {
     return (c.getCol() + col) % col;
   }
   
-  private boolean canWalk(Coordinate c, int d) {
+  private boolean canWalkGrid(Coordinate c, int d) {
     return grid[modRow(c)][modCol(c)][d % 4];
+  }
+  
+  private boolean canWalkAdj(Coordinate c, int d) {
+    return this.adj[modRow(c)][modCol(c)][d % 4];
   }
   
   private Coordinate getNextCoor(Coordinate c, int d) {
@@ -87,7 +147,7 @@ public class KruskalGridGenerator implements GridGenerator {
   }
   
   private boolean setAdjWalk(Coordinate c, int d) {
-    if (!canWalk(c, d)) {
+    if (!canWalkGrid(c, d)) {
       return false;
     }
     adj[modRow(c)][modCol(c)][d % 4] = true;
@@ -118,7 +178,7 @@ public class KruskalGridGenerator implements GridGenerator {
   }
   
   private Coordinate getRandomCoor(Set<Coordinate> coors) {
-    int index = random.nextInt(coors.size());
+    int index = this.rh.randomInt(0, coors.size() - 1);
     Iterator<Coordinate> iter = coors.iterator();
     for (int i = 0; i < index; i++) {
         iter.next();
@@ -142,17 +202,17 @@ public class KruskalGridGenerator implements GridGenerator {
     }
     for (int d = 0; d < 4; ++d) {
       // setAdjWalk(this.start, d);
-      if (canWalk(this.start, d)) {
+      if (canWalkGrid(this.start, d)) {
         adjv.add(getNextCoor(this.start, d));
       }
     }
     // loop
     while (connected.size() < row * col) {
       Coordinate curr = getRandomCoor(adjv);
-      int d = random.nextInt(4);
+      int d = this.rh.randomInt(0, 3);
       for (int i = d; i < d + 4; ++i) {
         if (connected.contains(getNextCoor(curr, i))
-            && canWalk(curr, i)) {
+            && canWalkGrid(curr, i)) {
           if (setAdjWalk(curr, i)) {
             connected.add(curr);
             adjv.remove(curr);
@@ -164,7 +224,7 @@ public class KruskalGridGenerator implements GridGenerator {
         Coordinate tmp = getNextCoor(curr, i);
         if (!(connected.contains(tmp))
             && !(adjv.contains(tmp))
-            && canWalk(curr, i)) {
+            && canWalkGrid(curr, i)) {
           adjv.add(tmp);
         }
       }

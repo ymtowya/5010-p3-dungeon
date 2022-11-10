@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import model.graph.GridGenerator;
 import model.graph.KruskalGridGenerator;
+import model.randomhelper.DungeonRandomHelper;
+import model.randomhelper.RandomHelper;
 
 public class GridGeneratorTest {
   
@@ -12,15 +14,18 @@ public class GridGeneratorTest {
 
   @Before
   public void setUp() throws Exception {
-    genetor = new KruskalGridGenerator();
+    RandomHelper rh = new DungeonRandomHelper(5);
+    genetor = new KruskalGridGenerator(rh);
   }
 
   @Test
   public void test() {
-    genetor.setIsWrapped(true);
+    genetor.setIsWrapped(false);
     genetor.geneGrid();
     genetor.getPlainGrid();
     System.out.println(genetor.getAdjStr());
+    genetor.getStepRecords();
+    System.out.println(genetor.getStepRecordString());
   }
 
 }

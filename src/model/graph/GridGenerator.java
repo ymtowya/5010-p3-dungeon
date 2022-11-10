@@ -11,4 +11,6 @@ public interface GridGenerator {
   boolean[][][] getPlainGrid();
   String getAdjStr();
   void geneGrid();
+  int[][] getStepRecords();
+  String getStepRecordString();
 }
