@@ -1,8 +1,12 @@
 package model.randomhelper;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import model.Treasure;
@@ -16,6 +20,7 @@ import model.graph.Coordinate;
  */
 public class DungeonRandomHelper implements RandomHelper {
   
+  private static int[] directions = new int[]{0, 1, 2, 3};
   Random rand;
   
   public DungeonRandomHelper(int seed) {
@@ -52,9 +57,55 @@ public class DungeonRandomHelper implements RandomHelper {
   }
 
   @Override
-  public List<Treasure> randTreasures(int maxNum) {
-    // TODO Auto-generated method stub
-    return null;
+  public Coordinate coordChoice(Collection<Coordinate> coors) {
+    int index = this.randomInt(0, coors.size() - 1);
+    Iterator<Coordinate> iter = coors.iterator();
+    for (int i = 0; i < index; i++) {
+        iter.next();
+    }
+    return iter.next();
+  }
+
+  @Override
+  public Coordinate randomCave(boolean[][][] adj) {
+    int r = adj.length;
+    if (r < 1) {
+      return null;
+    }
+    int c = adj[0].length;
+    List<Integer> caveXs = new ArrayList<>();
+    List<Integer> caveYs = new ArrayList<>();
+    for (int i = 0; i < r; ++i) {
+      for (int j = 0; j < c; ++j) {
+        int tmp = 0;
+        for (int d = 0; d < 4; ++d) {
+          if (adj[i][j][d]) {
+            ++tmp;
+          }
+        }
+        if (tmp != 2) {
+          caveXs.add(i);
+          caveYs.add(j);
+        }
+      }
+    }
+    
+    if (caveXs.isEmpty()) {
+      return null;
+    }
+    
+    final int index = randomInt(0, caveXs.size());
+    
+    return new Coordinate(caveXs.get(index), caveYs.get(index));
+  }
+
+  @Override
+  public Map<Treasure, Integer> treasureChoices(int maxNum) {
+    Map<Treasure, Integer> resMap = new HashMap<>();
+    for (Treasure t : Treasure.values()) {
+      resMap.put(t, randomInt(0, maxNum));
+    }
+    return resMap;
   }
 
 }

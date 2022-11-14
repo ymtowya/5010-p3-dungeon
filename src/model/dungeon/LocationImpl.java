@@ -54,7 +54,7 @@ public class LocationImpl implements Location {
 
   @Override
   public void setTreasureMap(Map<Treasure, Integer> newTreasures) {
-    if (!isTunnel()) {
+    if (isCave()) {
       this.treasures = new HashMap<>(newTreasures);
     }
   }
@@ -83,7 +83,7 @@ public class LocationImpl implements Location {
 
   @Override
   public boolean canHoldTreasureNow() {
-    return !this.isTunnel();
+    return this.isCave();
   }
 
   @Override
@@ -92,8 +92,20 @@ public class LocationImpl implements Location {
   }
 
   @Override
-  public boolean isTunnel() {
-    return this.directions.size() == 2;
+  public boolean isCave() {
+    return this.directions.size() != 2;
+  }
+
+  @Override
+  public void addTreasures(Map<Treasure, Integer> newTreasures) {
+    for (Treasure t : newTreasures.keySet()) {
+      if (this.treasures.containsKey(t)) {
+        final int tmp = treasures.get(t);
+        treasures.put(t, tmp + newTreasures.get(t));
+      } else {
+        treasures.put(t, newTreasures.get(t));
+      }
+    }
   }
 
 }

@@ -77,10 +77,16 @@ public class Tunnel implements Location {
   public Set<Direction> getAllDirections() {
     return new HashSet<>(this.directions);
   }
+  @Override
+  public void addTreasures(Map<Treasure, Integer> newTreasures) {
+    // TODO Auto-generated method stub
+    
+  }
 
   @Override
-  public boolean isTunnel() {
-    return true;
+  public boolean isCave() {
+    // TODO Auto-generated method stub
+    return false;
   }
 
 }

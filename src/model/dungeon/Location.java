@@ -12,5 +12,5 @@ public interface Location extends TreasureHolder {
   void removeDirection(Direction d);
   void clearAllDirections();
   Set<Direction> getAllDirections();
-  boolean isTunnel();
+  boolean isCave();
 }

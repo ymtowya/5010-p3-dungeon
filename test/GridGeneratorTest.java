@@ -14,18 +14,21 @@ public class GridGeneratorTest {
 
   @Before
   public void setUp() throws Exception {
-    RandomHelper rh = new DungeonRandomHelper(5);
+    RandomHelper rh = new DungeonRandomHelper(99);
     genetor = new KruskalGridGenerator(rh);
   }
 
   @Test
   public void test() {
     genetor.setIsWrapped(false);
+    genetor.setSize(7, 9);
+    genetor.setConnectivity(4);
     genetor.geneGrid();
     genetor.getPlainGrid();
+    genetor.setRandomStart();
     System.out.println(genetor.getAdjStr());
-    genetor.getStepRecords();
-    System.out.println(genetor.getStepRecordString());
+    genetor.getStepRecords(genetor.getStart());
+    System.out.println(genetor.getStepRecordString(genetor.getStart()));
   }
 
 }

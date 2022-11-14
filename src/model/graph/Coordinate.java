@@ -60,4 +60,15 @@ public class Coordinate {
     return false;
   }
   
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append('(');
+    sb.append(this.row);
+    sb.append(", ");
+    sb.append(this.col);
+    sb.append(')');
+    return sb.toString();
+  }
+  
 }

@@ -1,6 +1,8 @@
 package model.randomhelper;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import model.Treasure;
 import model.graph.Coordinate;
@@ -25,8 +27,6 @@ public interface RandomHelper {
   
   Coordinate randomCoord(int maxRow, int maxCol);
   
-  List<Treasure> randTreasures(int maxNum);
-  
   /**
    * Split one value into several parts and return them.
    *
@@ -36,5 +36,9 @@ public interface RandomHelper {
    */
   List<Integer> randDivideVal(Integer total, int parts);
   
-
+  Coordinate coordChoice(Collection<Coordinate> coors);
+  
+  Coordinate randomCave(boolean[][][] adj);
+  
+  Map<Treasure, Integer> treasureChoices(int maxNum);
 }

@@ -5,13 +5,22 @@ import java.util.Map;
 
 import model.Treasure;
 import model.TreasureHolder;
+import model.graph.Coordinate;
 
 public class DungeonPlayer implements Player {
   
   private int id;
   private int row;
   private int col;
+  private String name;
   private Map<Treasure, Integer> treasures;
+  
+  public DungeonPlayer(int r, int c, String n) {
+    this.row = r;
+    this.col = c;
+    this.name = n;
+    this.treasures = new HashMap<>();
+  }
   
   @Override
   public int getId() {
@@ -71,6 +80,23 @@ public class DungeonPlayer implements Player {
   @Override
   public boolean canHoldTreasureNow() {
     return true;
+  }
+
+  @Override
+  public void addTreasures(Map<Treasure, Integer> newTreasures) {
+    for (Treasure t : newTreasures.keySet()) {
+      if (this.treasures.containsKey(t)) {
+        final int tmp = treasures.get(t);
+        treasures.put(t, tmp + newTreasures.get(t));
+      } else {
+        treasures.put(t, newTreasures.get(t));
+      }
+    }
+  }
+
+  @Override
+  public Coordinate getCoord() {
+    return new Coordinate(row, col);
   }
 
 }

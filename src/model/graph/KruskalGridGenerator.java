@@ -1,10 +1,12 @@
 package model.graph;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.function.IntPredicate;
@@ -25,7 +27,6 @@ public class KruskalGridGenerator implements GridGenerator {
   private RandomHelper rh;
   
   
-  
   public KruskalGridGenerator(RandomHelper newRh) {
     this.row = 5;
     this.col = 7;
@@ -40,14 +41,34 @@ public class KruskalGridGenerator implements GridGenerator {
     this.stepRec[c.row][c.col] = step;
   }
   
+  private int getAdjFreeDegree(Coordinate c) {
+    int res = 0;
+    for (int d = 0; d < 4; d++) {
+      if (canWalkAdj(c, d)) {
+        ++res;
+      }
+    }
+    return res;
+  }
+  
+  private int getGridFreeDegree(Coordinate c) {
+    int res = 0;
+    for (int d = 0; d < 4; d++) {
+      if (canWalkGrid(c, d)) {
+        ++res;
+      }
+    }
+    return res;
+  }
+  
   @Override
-  public int[][] getStepRecords() {
+  public int[][] getStepRecords(Coordinate s) {
     this.stepRec = new int[row][col];
     Queue<Coordinate> thisLayer = new ArrayDeque<>();
     Queue<Coordinate> nextLayer = new ArrayDeque<>();
     Set<Coordinate> visited = new HashSet<>();
     
-    thisLayer.add(start);
+    thisLayer.add(s);
     int currStep = 0;
     while (!thisLayer.isEmpty()) {
       while(!thisLayer.isEmpty()) {
@@ -76,7 +97,8 @@ public class KruskalGridGenerator implements GridGenerator {
   }
   
   @Override
-  public String getStepRecordString() {
+  public String getStepRecordString(Coordinate s) {
+    this.getStepRecords(s);
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < row; ++i) {
       for (int j = 0; j < col; ++j) {
@@ -177,15 +199,6 @@ public class KruskalGridGenerator implements GridGenerator {
     }
   }
   
-  private Coordinate getRandomCoor(Set<Coordinate> coors) {
-    int index = this.rh.randomInt(0, coors.size() - 1);
-    Iterator<Coordinate> iter = coors.iterator();
-    for (int i = 0; i < index; i++) {
-        iter.next();
-    }
-    return iter.next();
-  }
-  
   private void geneMST() {
     // init vSet & adjVSet
     Set<Coordinate> connected = new HashSet<>();
@@ -208,7 +221,7 @@ public class KruskalGridGenerator implements GridGenerator {
     }
     // loop
     while (connected.size() < row * col) {
-      Coordinate curr = getRandomCoor(adjv);
+      Coordinate curr = rh.coordChoice(adjv);
       int d = this.rh.randomInt(0, 3);
       for (int i = d; i < d + 4; ++i) {
         if (connected.contains(getNextCoor(curr, i))
@@ -231,6 +244,48 @@ public class KruskalGridGenerator implements GridGenerator {
     }
   }
   
+  private boolean setConnectivity() {
+    int freeEdges = 0;
+    Set<Coordinate> frees = new HashSet<>();
+    for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < col; ++j) {
+        Coordinate tmpCoord = new Coordinate(i, j);
+        int tmpAdjDegree = getAdjFreeDegree(tmpCoord);
+        int tmpGridDegree = getGridFreeDegree(tmpCoord);
+        freeEdges += tmpGridDegree - tmpAdjDegree;
+        if (tmpAdjDegree < tmpGridDegree) {
+          frees.add(tmpCoord);
+        }
+      }
+    }
+    // not enough edges
+    if (freeEdges < this.connectivity * 2) {
+      return false;
+    }
+    
+    int leftConn = this.connectivity;
+    while (leftConn > 0) {
+      Coordinate curr = rh.coordChoice(frees);
+      final int startDir = rh.randomInt(0, 3);
+      for (int i = 0; i < 4; ++i) {
+        if (!canWalkAdj(curr, startDir + i) && canWalkGrid(curr, startDir + i)) {
+          
+          setAdjWalk(curr, startDir + i);
+          leftConn--;
+          if (getAdjFreeDegree(curr) >= getGridFreeDegree(curr)) {
+            frees.remove(curr);
+          }
+          Coordinate relevant = getNextCoor(curr, startDir + i);
+          if (getAdjFreeDegree(relevant) >= getGridFreeDegree(relevant)) {
+            frees.remove(relevant);
+          }
+          break;
+        }
+      }
+    }
+    return true;
+  }
+  
   @Override
   public void geneGrid() {
     // based on inner connectivity & isWrapped
@@ -240,7 +295,7 @@ public class KruskalGridGenerator implements GridGenerator {
     // get MST
     this.geneMST();
     // add to connectivity
-    
+    this.setConnectivity();
   }
 
   @Override
@@ -311,6 +366,57 @@ public class KruskalGridGenerator implements GridGenerator {
       sb.append('\n');
     }
     return sb.toString();
+  }
+
+  @Override
+  public boolean setRandomStart() {
+    this.start = new Coordinate(rh.randomInt(0, row - 1),
+        rh.randomInt(0, col - 1));
+    return true;
+  }
+  
+  private boolean isCave(Coordinate c) {
+    return getAdjFreeDegree(c) != 2;
+  }
+  
+  @Override
+  public boolean setRandomEnd(int steps) {
+    List<Integer> coorXs = new ArrayList<>();
+    List<Integer> coorYs = new ArrayList<>();
+    for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < col; ++j) {
+        Coordinate coor = new Coordinate(i, j);
+        if (isCave(coor) &&
+            stepRec[i][j] >= steps) {
+          coorXs.add(i);
+          coorYs.add(j);
+        }
+      }
+    }
+    if (coorXs.isEmpty()) {
+      return false;
+    }
+    
+    final int tmpIndex = rh.randomInt(0, coorXs.size() - 1);
+    this.end = new Coordinate(coorXs.get(tmpIndex), coorYs.get(tmpIndex));
+    return true;
+  }
+
+  @Override
+  public Set<Coordinate> geneRandomCaves(double prob) {
+    List<Coordinate> list = new ArrayList<>();
+    for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < col; ++j) {
+        Coordinate coor = new Coordinate(i, j);
+        if (isCave(coor)) {
+          list.add(coor);
+        }
+      }
+    }
+    final int nums = (int) Math.floor(prob * list.size());
+    Collections.shuffle(list);
+    
+    return new HashSet<>(list.subList(0, nums));
   }
 
 }
