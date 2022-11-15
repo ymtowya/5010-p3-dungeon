@@ -67,7 +67,9 @@ public class KruskalGridGenerator implements GridGenerator {
     Queue<Coordinate> thisLayer = new ArrayDeque<>();
     Queue<Coordinate> nextLayer = new ArrayDeque<>();
     Set<Coordinate> visited = new HashSet<>();
-    
+    for (int i = 0; i < row; ++i)
+      for (int j = 0; j < col; ++j)
+        stepRec[i][j] = -1; 
     thisLayer.add(s);
     int currStep = 0;
     while (!thisLayer.isEmpty()) {

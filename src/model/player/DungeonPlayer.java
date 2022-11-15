@@ -9,7 +9,6 @@ import model.graph.Coordinate;
 
 public class DungeonPlayer implements Player {
   
-  private int id;
   private int row;
   private int col;
   private String name;
@@ -20,11 +19,9 @@ public class DungeonPlayer implements Player {
     this.col = c;
     this.name = n;
     this.treasures = new HashMap<>();
-  }
-  
-  @Override
-  public int getId() {
-    return this.id;
+    for (Treasure t : Treasure.values()) {
+      this.treasures.put(t, 0);
+    }
   }
 
   @Override
@@ -61,14 +58,6 @@ public class DungeonPlayer implements Player {
   }
 
   @Override
-  public int getTreasureCount(Treasure treasureName) {
-    if (this.treasures.containsKey(treasureName)) {
-      return this.treasures.get(treasureName);
-    }
-    return 0;
-  }
-
-  @Override
   public int getTotalTreasure() {
     int count = 0;
     for (int tmp : this.treasures.values()) {
@@ -97,6 +86,11 @@ public class DungeonPlayer implements Player {
   @Override
   public Coordinate getCoord() {
     return new Coordinate(row, col);
+  }
+  
+  @Override
+  public String getName() {
+    return this.name;
   }
 
 }

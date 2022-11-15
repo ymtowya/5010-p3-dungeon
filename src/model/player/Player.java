@@ -4,7 +4,7 @@ import model.TreasureHolder;
 import model.graph.Coordinate;
 
 public interface Player extends TreasureHolder {
-  int getId();
+  String getName();
   int getRow();
   int getCol();
   Coordinate getCoord();

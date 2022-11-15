@@ -73,7 +73,7 @@ public class GameCalculatorImpl implements GameCalculator {
     genetor.setConnectivity(conn);
     genetor.setRandomStart();
     genetor.geneGrid();
-    genetor.getPlainGrid();
+    genetor.setStart(rh.randomCave(genetor.getPlainGrid()));
     genetor.getStepRecords(genetor.getStart());
     genetor.setRandomEnd(5);
     
@@ -181,6 +181,48 @@ public class GameCalculatorImpl implements GameCalculator {
       sb.append('\n');
     }
     return sb.toString();
+  }
+
+  @Override
+  public String getPlayerString(Player p) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("---- Player Description ----\n");
+    sb.append("Name : ");
+    sb.append(p.getName());
+    sb.append("\nPosition : ");
+    sb.append(p.getCoord().toString());
+    sb.append("\nTreasures : \n");
+    sb.append(p.getTreasures().toString());
+    sb.append("\n---- End Of Description ----\\n");
+    return sb.toString();
+  }
+
+  @Override
+  public String getLocationString(DungeonMap m, Coordinate c) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("---- Location Description ----\n");
+    sb.append("Player is currently at : ");
+    sb.append(c.toString());
+    sb.append("\nThis place is a ");
+    if (m.isCave(c)) {
+      sb.append("cave");
+      sb.append("\nTreasures at this location : \n");
+      sb.append(m.getTreasuresAt(c).toString());
+    } else {
+      sb.append("tunnel\nNo treasures in tunnel.");
+    }
+    sb.append("\n---- End Of Description ----\\n");
+    return sb.toString();
+  }
+
+  @Override
+  public boolean isAtEnd(DungeonMap m, Player p) {
+    return m.getEnd().equals(p.getCoord());
+  }
+
+  @Override
+  public Set<Direction> walkableDirs(DungeonMap m, Player p) {
+    return m.getDirectionsAt(p.getCoord());
   }
 
 }

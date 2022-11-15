@@ -65,14 +65,6 @@ public class LocationImpl implements Location {
   }
 
   @Override
-  public int getTreasureCount(Treasure treasureName) {
-    if (this.treasures.containsKey(treasureName)) {
-      return this.treasures.get(treasureName);
-    }
-    return 0;
-  }
-
-  @Override
   public int getTotalTreasure() {
     int count = 0;
     for (int tmp : this.treasures.values()) {

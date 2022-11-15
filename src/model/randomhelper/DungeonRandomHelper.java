@@ -8,7 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
+import model.Direction;
 import model.Treasure;
 import model.graph.Coordinate;
 
@@ -106,6 +108,16 @@ public class DungeonRandomHelper implements RandomHelper {
       resMap.put(t, randomInt(0, maxNum));
     }
     return resMap;
+  }
+
+  @Override
+  public Direction directionChoice(Set<Direction> ds) {
+    int index = this.randomInt(0, ds.size() - 1);
+    Iterator<Direction> iter = ds.iterator();
+    for (int i = 0; i < index; i++) {
+        iter.next();
+    }
+    return iter.next();
   }
 
 }

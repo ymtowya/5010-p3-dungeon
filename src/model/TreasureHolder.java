@@ -7,6 +7,5 @@ public interface TreasureHolder {
   void setTreasureMap(Map<Treasure, Integer> newTreasures);
   void addTreasures(Map<Treasure, Integer> newTreasures);
   Map<Treasure, Integer> getTreasures();
-  int getTreasureCount(Treasure treasureName);
   int getTotalTreasure();
 }

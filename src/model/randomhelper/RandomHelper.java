@@ -3,7 +3,9 @@ package model.randomhelper;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import model.Direction;
 import model.Treasure;
 import model.graph.Coordinate;
 
@@ -41,4 +43,6 @@ public interface RandomHelper {
   Coordinate randomCave(boolean[][][] adj);
   
   Map<Treasure, Integer> treasureChoices(int maxNum);
+  
+  Direction directionChoice(Set<Direction> ds);
 }

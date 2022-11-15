@@ -1,0 +1,165 @@
+
+---------START----------
+Initializing the Unwrapped Game:
+                                        
+  0 --(3)  (0)  (0)  (0)  (0)--(6)-- 0  
+  |         |    |    |         |    |  
+  |         |    |    |         |    |  
+ (0)--(2)--(0)  (0)--(0)--(7)   0    0  
+  |    |    |    |    |         |    |  
+  |    |    |    |    |         |    |  
+  0    0   (4)   0    0 --(0)--(4)--(0) 
+  |    |         |         |    |    |  
+  |    |         |         |    |    |  
+  0 --(5]--(0)--(0)--(0)--(3)  (0)   0  
+       |    |         |    |         |  
+       |    |         |    |         |  
+  0 --(5)  (1)--(0)  (4)  (0)--(4)  (0) 
+  |    |    |              |            
+  |    |    |              |            
+  0   (0)  (4)--(7)   0 --[*)--(5)--(0) 
+  |         |         |    |    |       
+  |         |         |    |    |       
+ (6)  (0)-- 0   (0)-- 0    0 --(0)--(0) 
+                                        
+
+-------------------
+The player state now is:
+---- Player Description ----
+Name : Tonnie
+Position : (5, 5)
+Treasures : 
+{DIAMONDS=0, SAPPHIRES=0, RUBIES=0}
+---- End Of Description ----\n
+-------------------
+The Location description is:
+---- Location Description ----
+Player is currently at : (5, 5)
+This place is a cave
+Treasures at this location : 
+{}
+---- End Of Description ----\n
+-------------------
+Now we start the game:
+Directions : [+SOUTH, +NORTH, +EAST, +EAST, +WEST, +SOUTH, +EAST, +WEST, +WEST, +EAST, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +WEST, +EAST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +NORTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +EAST, +WEST, +SOUTH, +EAST, +SOUTH, +EAST, +WEST, +NORTH, +SOUTH, +WEST, +NORTH, +NORTH, +EAST, +WEST, +NORTH, +WEST, +WEST, +EAST, +EAST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +SOUTH, +WEST, +SOUTH, +NORTH, +EAST, +EAST, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +EAST, +WEST, +WEST, +EAST, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +NORTH, +EAST, +WEST, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +SOUTH, +EAST, +EAST, +WEST, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +WEST, +WEST, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +EAST, +WEST, +SOUTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +EAST, +WEST, +NORTH, +NORTH, +SOUTH, +SOUTH, +EAST, +EAST, +WEST, +WEST, +SOUTH, +EAST, +NORTH, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +WEST, +EAST, +NORTH, +EAST, +WEST, +NORTH, +NORTH, +WEST, +NORTH, +NORTH, +SOUTH, +WEST, +SOUTH, +SOUTH, +EAST, +EAST, +SOUTH, +SOUTH, +WEST, +EAST, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +EAST, +WEST, +SOUTH, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +NORTH, +WEST, +WEST, +EAST, +NORTH, +NORTH, +SOUTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +EAST, +WEST, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +NORTH, +SOUTH, +SOUTH, +EAST, +EAST, +WEST, +NORTH, +WEST, +SOUTH, +EAST, +EAST, +WEST, +WEST, +NORTH, +NORTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +WEST, +WEST, +NORTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +EAST, +EAST, +WEST, +SOUTH, +NORTH, +WEST, +EAST, +SOUTH, +NORTH, +WEST, +WEST, +WEST, 
+
+The player reached the end ? : Yes
+Takes in total steps : 274
+-------------------
+Now the game result is:
+                                        
+  0 --(3)  (0)  (0)  (0)  (0)--(6)-- 0  
+  |         |    |    |         |    |  
+  |         |    |    |         |    |  
+ (0)--(2)--(0)  (0)--(0)--(7)   0    0  
+  |    |    |    |    |         |    |  
+  |    |    |    |    |         |    |  
+  0    0   (4)   0    0 --(0)--(4)--(0) 
+  |    |         |         |    |    |  
+  |    |         |         |    |    |  
+  0 --(*]--(0)--(0)--(0)--(0)  (0)   0  
+       |    |         |    |         |  
+       |    |         |    |         |  
+  0 --(5)  (1)--(0)  (0)  (0)--(0)  (0) 
+  |    |    |              |            
+  |    |    |              |            
+  0   (0)  (4)--(7)   0 --[0)--(0)--(0) 
+  |         |         |    |    |       
+  |         |         |    |    |       
+ (6)  (0)-- 0   (0)-- 0    0 --(0)--(0) 
+                                        
+
+-------------------
+Now the player description is:
+---- Player Description ----
+Name : Tonnie
+Position : (3, 1)
+Treasures : 
+{DIAMONDS=8, SAPPHIRES=4, RUBIES=4}
+---- End Of Description ----\n
+
+---------NEW GAME----------
+Initializing the Wrapped Game:
+  |                        |    |       
+ (6)  (5)   0 --[*)  (0)   0   (0)  (4) 
+       |    |         |    |         |  
+       |    |         |    |         |  
+ (2)   0 --(7)--(4)-- 0   (8)--(0)   0  
+  |              |         |         |  
+  |              |         |         |  
+- 0   (0)-- 0 --(5)-- 0    0   (0)--(0)-
+                      |    |         |  
+                      |    |         |  
+ (4)--(0)--(7)  (8)--(4)--(0)  (1)   0  
+       |              |    |    |    |  
+       |              |    |    |    |  
+ (0)--(3)--(6]--(4)--(0)  (7)  (3)-- 0  
+       |    |    |    |         |       
+       |    |    |    |         |       
+- 0 --(2)  (5)  (8)  (6)-- 0 --(4)  (2)-
+       |              |         |       
+       |              |         |       
+-(3)  (3)--(0)   0 --(4)-- 0    0 --(0)-
+       |         |    |    |         |  
+       |         |    |    |         |  
+  0 --(5)--(5)   0 --(5)--(4)--(5)-- 0  
+  |                        |    |       
+
+-------------------
+The player state now is:
+---- Player Description ----
+Name : Tonnie
+Position : (0, 3)
+Treasures : 
+{DIAMONDS=8, SAPPHIRES=4, RUBIES=4}
+---- End Of Description ----\n
+-------------------
+The Location description is:
+---- Location Description ----
+Player is currently at : (0, 3)
+This place is a cave
+Treasures at this location : 
+{}
+---- End Of Description ----\n
+-------------------
+Now we start the game:
+Directions : [+WEST, +SOUTH, +WEST, +EAST, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +SOUTH, +WEST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +EAST, +WEST, +EAST, +NORTH, +WEST, +EAST, +SOUTH, +EAST, +SOUTH, +NORTH, +WEST, +WEST, +WEST, +EAST, +EAST, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +SOUTH, +WEST, +WEST, +EAST, +EAST, +EAST, +SOUTH, +EAST, +WEST, +NORTH, +WEST, +NORTH, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +WEST, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +EAST, +WEST, +NORTH, +SOUTH, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +NORTH, +EAST, +WEST, +SOUTH, +EAST, +SOUTH, +WEST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +WEST, +NORTH, +SOUTH, +WEST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +EAST, +NORTH, +WEST, +EAST, +SOUTH, +WEST, +WEST, +EAST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +EAST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +EAST, +WEST, +EAST, +NORTH, +WEST, +WEST, +EAST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +EAST, +EAST, +WEST, +WEST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +EAST, +SOUTH, +NORTH, +WEST, +NORTH, +EAST, +WEST, +EAST, +WEST, +SOUTH, +EAST, +SOUTH, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +EAST, +EAST, +SOUTH, +EAST, +NORTH, +NORTH, +NORTH, +NORTH, +NORTH, +WEST, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +NORTH, +NORTH, +NORTH, +SOUTH, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +SOUTH, +NORTH, +WEST, +WEST, 
+
+The player reached the end ? : Yes
+Takes in total steps : 263
+-------------------
+Now the game result is:
+  |                        |    |       
+ (6)  (0)   0 --[0)  (0)   0   (0)  (4) 
+       |    |         |    |         |  
+       |    |         |    |         |  
+ (2)   0 --(0)--(0)-- 0   (0)--(0)   0  
+  |              |         |         |  
+  |              |         |         |  
+- 0   (0)-- 0 --(0)-- 0    0   (0)--(0)-
+                      |    |         |  
+                      |    |         |  
+ (4)--(0)--(7)  (0)--(0)--(0)  (1)   0  
+       |              |    |    |    |  
+       |              |    |    |    |  
+ (0)--(3)--(*]--(0)--(0)  (7)  (3)-- 0  
+       |    |    |    |         |       
+       |    |    |    |         |       
+- 0 --(2)  (5)  (8)  (0)-- 0 --(4)  (2)-
+       |              |         |       
+       |              |         |       
+-(3)  (3)--(0)   0 --(0)-- 0    0 --(0)-
+       |         |    |    |         |  
+       |         |    |    |         |  
+  0 --(5)--(5)   0 --(5)--(0)--(5)-- 0  
+  |                        |    |       
+
+-------------------
+Now the player description is:
+---- Player Description ----
+Name : Tonnie
+Position : (4, 2)
+Treasures : 
+{DIAMONDS=26, SAPPHIRES=26, RUBIES=23}
+---- End Of Description ----\n
+---------END----------

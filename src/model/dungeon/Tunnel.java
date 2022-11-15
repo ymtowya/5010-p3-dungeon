@@ -33,11 +33,6 @@ public class Tunnel implements Location {
   }
 
   @Override
-  public int getTreasureCount(Treasure treasureName) {
-    return 0;
-  }
-
-  @Override
   public int getTotalTreasure() {
     return 0;
   }
