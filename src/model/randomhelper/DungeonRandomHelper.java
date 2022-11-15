@@ -2,29 +2,31 @@ package model.randomhelper;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-
 import model.Direction;
 import model.Treasure;
 import model.graph.Coordinate;
 
 
 /**
- * BattleRandomHelper is one helper to give random values to support the game.
+ * DungeonRandomHelper is one helper to give random values to support the game.
  *
  *
  */
 public class DungeonRandomHelper implements RandomHelper {
   
-  private static int[] directions = new int[]{0, 1, 2, 3};
   Random rand;
   
+  /**
+   * Initialize the helper with seed.
+   *
+   * @param seed the seed
+   */
   public DungeonRandomHelper(int seed) {
     rand = new Random(seed);
   }
@@ -32,11 +34,6 @@ public class DungeonRandomHelper implements RandomHelper {
   @Override
   public int randomInt(int left, int right) {
     return rand.nextInt(right - left + 1) + left;
-  }
-
-  
-  private int randTerm() {
-    return this.randomInt(5, 50);
   }
 
   @Override
@@ -63,7 +60,7 @@ public class DungeonRandomHelper implements RandomHelper {
     int index = this.randomInt(0, coors.size() - 1);
     Iterator<Coordinate> iter = coors.iterator();
     for (int i = 0; i < index; i++) {
-        iter.next();
+      iter.next();
     }
     return iter.next();
   }
@@ -96,7 +93,7 @@ public class DungeonRandomHelper implements RandomHelper {
       return null;
     }
     
-    final int index = randomInt(0, caveXs.size());
+    final int index = randomInt(0, caveXs.size() - 1);
     
     return new Coordinate(caveXs.get(index), caveYs.get(index));
   }
@@ -105,7 +102,7 @@ public class DungeonRandomHelper implements RandomHelper {
   public Map<Treasure, Integer> treasureChoices(int maxNum) {
     Map<Treasure, Integer> resMap = new HashMap<>();
     for (Treasure t : Treasure.values()) {
-      resMap.put(t, randomInt(0, maxNum));
+      resMap.put(t, randomInt(1, maxNum));
     }
     return resMap;
   }
@@ -115,7 +112,7 @@ public class DungeonRandomHelper implements RandomHelper {
     int index = this.randomInt(0, ds.size() - 1);
     Iterator<Direction> iter = ds.iterator();
     for (int i = 0; i < index; i++) {
-        iter.next();
+      iter.next();
     }
     return iter.next();
   }

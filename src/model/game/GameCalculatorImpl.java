@@ -3,9 +3,6 @@ package model.game;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
-import javax.sql.rowset.JoinRowSet;
-
 import model.Direction;
 import model.Treasure;
 import model.dungeon.DungeonMap;
@@ -16,10 +13,20 @@ import model.graph.KruskalGridGenerator;
 import model.player.Player;
 import model.randomhelper.RandomHelper;
 
+/**
+ * An implementation of the Game Calculator interface.
+ *
+ *
+ */
 public class GameCalculatorImpl implements GameCalculator {
   
   private RandomHelper rh;
   
+  /**
+   * Initialize the calculator with the random helper.
+   *
+   * @param r random helper
+   */
   public GameCalculatorImpl(RandomHelper r) {
     this.rh = r;
   }
@@ -147,22 +154,25 @@ public class GameCalculatorImpl implements GameCalculator {
         } else {
           sb.append(" ");
         }
-        if (m.getStart().equals(c))
+        if (m.getStart().equals(c)) {
           sb.append('[');
-        else if (m.isCave(c))
+        } else if (m.isCave(c)) {
           sb.append('(');
-        else
+        } else {
           sb.append(' ');
-        if (p.getCoord().equals(c))
+        }
+        if (p.getCoord().equals(c)) {
           sb.append('*');
-        else
+        } else {
           sb.append(countTreasures(m.getTreasuresAt(c)));
-        if (m.getEnd().equals(c))
+        }
+        if (m.getEnd().equals(c)) {
           sb.append(']');
-        else if (m.isCave(c))
+        } else if (m.isCave(c)) {
           sb.append(')');
-        else
+        } else {
           sb.append(' ');
+        }
         if (m.canWalk(c, Direction.EAST)) {
           sb.append("-");
         } else {
@@ -193,7 +203,7 @@ public class GameCalculatorImpl implements GameCalculator {
     sb.append(p.getCoord().toString());
     sb.append("\nTreasures : \n");
     sb.append(p.getTreasures().toString());
-    sb.append("\n---- End Of Description ----\\n");
+    sb.append("\n---- End Of Description ----\n");
     return sb.toString();
   }
 
@@ -211,7 +221,7 @@ public class GameCalculatorImpl implements GameCalculator {
     } else {
       sb.append("tunnel\nNo treasures in tunnel.");
     }
-    sb.append("\n---- End Of Description ----\\n");
+    sb.append("\n---- End Of Description ----\n");
     return sb.toString();
   }
 

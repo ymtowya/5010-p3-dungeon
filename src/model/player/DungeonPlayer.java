@@ -2,11 +2,14 @@ package model.player;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import model.Treasure;
-import model.TreasureHolder;
 import model.graph.Coordinate;
 
+/**
+ * An implementation of the player in the dungeon.
+ *
+ *
+ */
 public class DungeonPlayer implements Player {
   
   private int row;
@@ -14,6 +17,13 @@ public class DungeonPlayer implements Player {
   private String name;
   private Map<Treasure, Integer> treasures;
   
+  /**
+   * Initialize the player.
+   *
+   * @param r row
+   * @param c column
+   * @param n name
+   */
   public DungeonPlayer(int r, int c, String n) {
     this.row = r;
     this.col = c;

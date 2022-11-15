@@ -1,16 +1,18 @@
 package model.dungeon;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import model.Direction;
 import model.Treasure;
 import model.graph.Coordinate;
 
+/**
+ * An implementation of DungeonMap.
+ *
+ */
 public class DungeonMapImpl implements DungeonMap {
   
   private List<List<Location>> myDungeon;
@@ -19,6 +21,14 @@ public class DungeonMapImpl implements DungeonMap {
   private Coordinate start;
   private Coordinate end;
   
+  /**
+   * Dungeon Map Initializer.
+   *
+   * @param row row numbers
+   * @param col column numbers
+   * @param connectivity the connectivity of the graph
+   * @param wrapped if is wrapped or not
+   */
   public DungeonMapImpl(int row, int col,
       int connectivity, boolean wrapped) {
     this.myDungeon = new ArrayList<>(row);

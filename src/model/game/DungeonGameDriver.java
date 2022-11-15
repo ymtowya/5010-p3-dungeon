@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Set;
-
 import model.Direction;
 import model.dungeon.DungeonMap;
 import model.player.DungeonPlayer;
@@ -13,7 +12,11 @@ import model.player.Player;
 import model.randomhelper.DungeonRandomHelper;
 import model.randomhelper.RandomHelper;
 
-
+/**
+ * Driver for the Dungeon Model.
+ *
+ *
+ */
 public class DungeonGameDriver {
 
   static FileWriter writer;
@@ -76,7 +79,7 @@ public class DungeonGameDriver {
     }
     log("\n---------START----------\n");
     log("Initializing the Unwrapped Game:\n");
-    RandomHelper helper = new DungeonRandomHelper(71);
+    RandomHelper helper = new DungeonRandomHelper(38);
     game = new GameCalculatorImpl(helper);
     Player p1 = new DungeonPlayer(0, 0, "Tonnie");
     DungeonMap m1 = game.initGame(7, 8, 4, false, 0.4);

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import model.Direction;
 import model.Treasure;
 import model.graph.Coordinate;
@@ -26,7 +25,13 @@ public interface RandomHelper {
    */
   int randomInt(int left, int right);
   
-  
+  /**
+   * Generate a random coordinate with the given bound.
+   *
+   * @param maxRow max row
+   * @param maxCol max col
+   * @return  the coordinate
+   */
   Coordinate randomCoord(int maxRow, int maxCol);
   
   /**
@@ -38,11 +43,35 @@ public interface RandomHelper {
    */
   List<Integer> randDivideVal(Integer total, int parts);
   
+  /**
+   * Pick a coordinate from the given collection.
+   *
+   * @param coors collection of coordinates
+   * @return the picked coord
+   */
   Coordinate coordChoice(Collection<Coordinate> coors);
   
+  /**
+   * Pick a random cave.
+   *
+   * @param adj the array denoting the dungeon grid map
+   * @return the coordinate of the cave
+   */
   Coordinate randomCave(boolean[][][] adj);
   
+  /**
+   * Return a combo of the treasures.
+   *
+   * @param maxNum max number of one treasure
+   * @return the combo map of treasures
+   */
   Map<Treasure, Integer> treasureChoices(int maxNum);
   
+  /**
+   * Pick a random direction.
+   *
+   * @param ds set of directions
+   * @return the picked direction
+   */
   Direction directionChoice(Set<Direction> ds);
 }

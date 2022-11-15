@@ -4,21 +4,33 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import model.Direction;
 import model.Treasure;
-import model.TreasureHolder;
 
+/**
+ * An implementation of the Location interface.
+ *
+ */
 public class LocationImpl implements Location {
   
   private Set<Direction> directions;
   private Map<Treasure, Integer> treasures;
   
+  /**
+   * Initialize with empty parameters.
+   *
+   */
   public LocationImpl() {
     this.directions = new HashSet<>();
     this.treasures = new HashMap<>();
   }
   
+  /**
+   * Initialize with parameters.
+   *
+   * @param newDirections directions walkable
+   * @param newTreasures treasures in the location
+   */
   public LocationImpl(Set<Direction> newDirections,
       Map<Treasure, Integer> newTreasures) {
     this.directions = new HashSet<>();

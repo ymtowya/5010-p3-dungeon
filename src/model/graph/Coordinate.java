@@ -1,20 +1,38 @@
 package model.graph;
 
+/**
+ * This class represents the position in the 2-D map,
+ * denoted by two dimension numbers : row & column.
+ *
+ */
 public class Coordinate {
   int row;
   int col;
   
+  /**
+   * Initialize the coordinate with row and column.
+   *
+   * @param r row
+   * @param c column
+   */
   public Coordinate(int r, int c) {
     this.row = r;
     this.col = c;
   }
   
+  /**
+   * Initialize the coordinate with another coord.
+   *
+   * @param oldCoor old coordinate
+   */
   public Coordinate(Coordinate oldCoor) {
     this.row = oldCoor.getRow();
     this.col = oldCoor.getCol();
   }
 
   /**
+   * Get Row.
+   *
    * @return the row
    */
   public int getRow() {
@@ -22,13 +40,17 @@ public class Coordinate {
   }
 
   /**
-   * @param row the row to set
+   * Set Row.
+   *
+   * @param r the row to set
    */
-  public void setRow(int row) {
-    this.row = row;
+  public void setRow(int r) {
+    this.row = r;
   }
 
   /**
+   * Get Column.
+   *
    * @return the col
    */
   public int getCol() {
@@ -36,10 +58,12 @@ public class Coordinate {
   }
 
   /**
-   * @param col the col to set
+   * Set the Col.
+   *
+   * @param c the col to set
    */
-  public void setCol(int col) {
-    this.col = col;
+  public void setCol(int c) {
+    this.col = c;
   }
   
   @Override
