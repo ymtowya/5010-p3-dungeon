@@ -19,6 +19,7 @@ This is a model of a 2-D dungeon, composed by caves and tunnels. It needs to rep
 ### How to run
 
 * Run the driver:
+
     Right-click the `model.game.DungeonGameDriver` and run the application. The outcome result will be presented in the `./res/runningResult.txt`. <br />
 
 * Run the JAR file:
