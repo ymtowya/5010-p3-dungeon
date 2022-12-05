@@ -79,7 +79,7 @@ public class DungeonGameDriver {
     }
     log("\n---------START----------\n");
     log("Initializing the Unwrapped Game:\n");
-    RandomHelper helper = new DungeonRandomHelper(38);
+    RandomHelper helper = new DungeonRandomHelper(14);
     game = new GameCalculatorImpl(helper);
     Player p1 = new DungeonPlayer(0, 0, "Tonnie");
     DungeonMap m1 = game.initGame(7, 8, 4, false, 0.4);

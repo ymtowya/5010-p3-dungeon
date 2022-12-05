@@ -135,7 +135,7 @@ public class GameCalculatorTest {
   }
   
   @Test
-  public void testWalable() {
+  public void testWalkable() {
     dm.setStart(new Coordinate(3, 0));
     gc.enterGame(dm, p1);
     if (gc.walkPlayer(dm, p1, Direction.EAST)) {

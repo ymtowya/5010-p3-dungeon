@@ -2,32 +2,32 @@
 ---------START----------
 Initializing the Unwrapped Game:
                                         
- (0)-- 0   (0)-- 0   (0]  (0)  (6)  (5) 
-       |         |    |    |    |    |  
-       |         |    |    |    |    |  
-  0 --(0)  (0)--(6)   0    0    0 --(4) 
-  |    |         |    |    |         |  
-  |    |         |    |    |         |  
-  0 --(0)-- 0 --(7)--(7)--(0)   0 --(8) 
-       |         |    |    |    |    |  
-       |         |    |    |    |    |  
-  0 --(0)--(0)   0    0   (0)--(0)--(7) 
-  |    |         |    |    |    |    |  
-  |    |         |    |    |    |    |  
- (0)  [*)  (5)-- 0   (6)--(0)   0   (0) 
-                      |    |    |       
-                      |    |    |       
- (5)   0 -- 0 --(3)-- 0   (0)  (0)-- 0  
-  |    |         |              |    |  
-  |    |         |              |    |  
-  0 --(4)-- 0 --(0)--(4)  (0)-- 0   (0) 
+ (0)  (0)--(0)-- 0 -- 0    0 -- 0 --(6) 
+  |         |         |    |            
+  |         |         |    |            
+ (0)--(9)-- 0    0 --(0)--(0)-- 0   (7) 
+  |    |         |    |         |    |  
+  |    |         |    |         |    |  
+ (8]  (0)   0 --(0)  (6)--(3)--(0)   0  
+            |    |    |    |    |    |  
+            |    |    |    |    |    |  
+  0 -- 0   (5)   0    0 --(0)--(0)-- 0  
+  |    |         |         |            
+  |    |         |         |            
+ (0)   0   [*)--(0)  (6)  (0)--(5)--(0) 
+       |         |    |    |    |       
+       |         |    |    |    |       
+ (6)--(7)  (5)  (9)-- 0    0    0 --(0) 
+       |    |    |         |            
+       |    |    |         |            
+ (6)--(6)--(0)--(0)-- 0 --(0)-- 0 --(0) 
                                         
 
 -------------------
 The player state now is:
 ---- Player Description ----
 Name : Tonnie
-Position : (4, 1)
+Position : (4, 2)
 Treasures : 
 {DIAMONDS=0, SAPPHIRES=0, RUBIES=0}
 ---- End Of Description ----
@@ -35,7 +35,7 @@ Treasures :
 -------------------
 The Location description is:
 ---- Location Description ----
-Player is currently at : (4, 1)
+Player is currently at : (4, 2)
 This place is a cave
 Treasures at this location : 
 {}
@@ -43,129 +43,129 @@ Treasures at this location :
 
 -------------------
 Now we start the game:
-Directions : [+NORTH, +SOUTH, +NORTH, +WEST, +EAST, +NORTH, +SOUTH, +WEST, +EAST, +NORTH, +NORTH, +NORTH, +SOUTH, +WEST, +SOUTH, +EAST, +SOUTH, +EAST, +WEST, +NORTH, +EAST, +WEST, +NORTH, +WEST, +EAST, +SOUTH, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +NORTH, +WEST, +NORTH, +EAST, +WEST, +EAST, +SOUTH, +SOUTH, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +NORTH, +SOUTH, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +EAST, +WEST, +NORTH, +EAST, +WEST, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +SOUTH, +EAST, +WEST, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +EAST, +WEST, +EAST, +WEST, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +NORTH, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +SOUTH, +NORTH, +WEST, +SOUTH, +EAST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +WEST, +EAST, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +WEST, +EAST, +WEST, +EAST, +SOUTH, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +EAST, +WEST, +NORTH, +NORTH, +WEST, +EAST, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +WEST, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +WEST, +EAST, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +NORTH, +NORTH, +WEST, +EAST, +SOUTH, +NORTH, +SOUTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +WEST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +EAST, +WEST, +NORTH, +EAST, +WEST, +WEST, +NORTH, +SOUTH, +EAST, +SOUTH, +SOUTH, +NORTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +EAST, +WEST, +NORTH, +EAST, +WEST, +WEST, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +SOUTH, +WEST, +EAST, +NORTH, +WEST, +SOUTH, +EAST, +EAST, +EAST, +NORTH, +NORTH, +SOUTH, +WEST, +EAST, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +WEST, +EAST, +NORTH, +SOUTH, +NORTH, +WEST, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +WEST, +EAST, +WEST, +EAST, +SOUTH, +WEST, +WEST, +SOUTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +EAST, +WEST, +NORTH, +SOUTH, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +SOUTH, +NORTH, +NORTH, +EAST, +EAST, +SOUTH, +NORTH, +NORTH, +SOUTH, +EAST, +SOUTH, +SOUTH, +EAST, +WEST, +NORTH, +NORTH, +EAST, +WEST, +WEST, +EAST, +NORTH, +NORTH, 
+Directions : [+EAST, +WEST, +EAST, +NORTH, +NORTH, +SOUTH, +SOUTH, +SOUTH, +EAST, +WEST, +SOUTH, +WEST, +WEST, +EAST, +EAST, +NORTH, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +NORTH, +SOUTH, +SOUTH, +EAST, +EAST, +EAST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +WEST, +WEST, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +NORTH, +NORTH, +NORTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +EAST, +SOUTH, +NORTH, +NORTH, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +SOUTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +NORTH, +WEST, +EAST, +EAST, +EAST, +SOUTH, +EAST, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +WEST, +SOUTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +SOUTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +EAST, +SOUTH, +SOUTH, +EAST, +NORTH, +NORTH, +SOUTH, +SOUTH, +WEST, +NORTH, +SOUTH, +EAST, +NORTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +SOUTH, +EAST, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +WEST, +WEST, +WEST, +NORTH, +SOUTH, +EAST, +SOUTH, +EAST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +NORTH, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +EAST, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +EAST, +WEST, +NORTH, +EAST, +WEST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +WEST, +EAST, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +NORTH, +SOUTH, +EAST, +WEST, +NORTH, +WEST, +SOUTH, +SOUTH, +WEST, +EAST, +EAST, +WEST, +EAST, +EAST, +WEST, +WEST, +WEST, +WEST, +NORTH, +NORTH, +NORTH, +NORTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +EAST, +SOUTH, +EAST, +SOUTH, +EAST, +EAST, +WEST, +WEST, +NORTH, +EAST, +SOUTH, +WEST, +NORTH, +SOUTH, +SOUTH, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +WEST, +NORTH, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +EAST, +WEST, +NORTH, +NORTH, +WEST, +EAST, +WEST, +SOUTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +NORTH, +NORTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +WEST, +EAST, +SOUTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +WEST, +EAST, +NORTH, +NORTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +WEST, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +EAST, +SOUTH, +EAST, +EAST, +SOUTH, +WEST, +EAST, +WEST, +SOUTH, +NORTH, +WEST, +EAST, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +EAST, +SOUTH, +EAST, +EAST, +NORTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +WEST, +WEST, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +SOUTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +WEST, +NORTH, +NORTH, +WEST, +WEST, +SOUTH, +NORTH, +WEST, +EAST, +SOUTH, +NORTH, +WEST, +EAST, +EAST, +EAST, +WEST, +EAST, +WEST, +WEST, +SOUTH, +NORTH, +SOUTH, +WEST, +SOUTH, +NORTH, +EAST, +WEST, +EAST, +WEST, +EAST, +WEST, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +EAST, +NORTH, +SOUTH, +WEST, +WEST, +EAST, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +NORTH, +WEST, +EAST, +EAST, +EAST, +SOUTH, +EAST, +WEST, +WEST, +SOUTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +SOUTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +SOUTH, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +WEST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +NORTH, +NORTH, +NORTH, +EAST, +SOUTH, +SOUTH, +NORTH, +EAST, +SOUTH, +NORTH, +EAST, +WEST, +SOUTH, +SOUTH, +NORTH, +EAST, +NORTH, +SOUTH, +WEST, +EAST, +EAST, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +SOUTH, +NORTH, +SOUTH, +WEST, +WEST, +NORTH, +WEST, +NORTH, +SOUTH, +SOUTH, +EAST, +EAST, +WEST, +NORTH, +SOUTH, +WEST, +NORTH, +EAST, +EAST, +WEST, +SOUTH, +SOUTH, +SOUTH, +SOUTH, +WEST, +WEST, +WEST, +WEST, +EAST, +EAST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +WEST, +EAST, +NORTH, +SOUTH, +SOUTH, +WEST, 
 
-The player reached the end ? : Yes
-Takes in total steps : 411
+The player reached the end ? : No
+Takes in total steps : 600
 -------------------
 Now the game result is:
                                         
- (0)-- 0   (0)-- 0   (*]  (0)  (6)  (5) 
-       |         |    |    |    |    |  
-       |         |    |    |    |    |  
-  0 --(0)  (0)--(0)   0    0    0 --(4) 
-  |    |         |    |    |         |  
-  |    |         |    |    |         |  
-  0 --(0)-- 0 --(0)--(0)--(0)   0 --(8) 
-       |         |    |    |    |    |  
-       |         |    |    |    |    |  
-  0 --(0)--(0)   0    0   (0)--(0)--(7) 
-  |    |         |    |    |    |    |  
-  |    |         |    |    |    |    |  
- (0)  [0)  (5)-- 0   (0)--(0)   0   (0) 
-                      |    |    |       
-                      |    |    |       
- (5)   0 -- 0 --(3)-- 0   (0)  (0)-- 0  
-  |    |         |              |    |  
-  |    |         |              |    |  
-  0 --(4)-- 0 --(0)--(4)  (0)-- 0   (0) 
+ (0)  (0)--(0)-- 0 -- 0    0 -- 0 --(6) 
+  |         |         |    |            
+  |         |         |    |            
+ (0)--(0)-- 0    0 --(0)--(0)-- 0   (0) 
+  |    |         |    |         |    |  
+  |    |         |    |         |    |  
+ (8]  (0)   0 --(0)  (0)--(0)--(0)   0  
+            |    |    |    |    |    |  
+            |    |    |    |    |    |  
+  0 -- 0   (0)   0    0 --(0)--(0)-- 0  
+  |    |         |         |            
+  |    |         |         |            
+ (0)   0   [0)--(0)  (0)  (0)--(0)--(0) 
+       |         |    |    |    |       
+       |         |    |    |    |       
+ (0)--(0)  (0)  (0)-- 0    0    0 --(0) 
+       |    |    |         |            
+       |    |    |         |            
+ (*)--(0)--(0)--(0)-- 0 --(0)-- 0 --(0) 
                                         
 
 -------------------
 Now the player description is:
 ---- Player Description ----
 Name : Tonnie
-Position : (0, 4)
+Position : (6, 0)
 Treasures : 
-{DIAMONDS=8, SAPPHIRES=9, RUBIES=9}
+{DIAMONDS=27, SAPPHIRES=20, RUBIES=27}
 ---- End Of Description ----
 
 
 ---------NEW GAME----------
 Initializing the Wrapped Game:
-       |    |    |              |       
-- 0 --(0)  (9)--(6)--(8)-- 0    0 --(7)-
-       |    |         |    |         |  
-       |    |         |    |         |  
- (6)--(8)--(0)-- 0   (0)  (9)  (6)-- 0  
-       |    |    |                      
-       |    |    |                      
-- 0    0   (0)  (5)   0 --(0)  [*)-- 0 -
-  |    |              |                 
-  |    |              |                 
--(4)--(5)-- 0   (0)--(0]  (4)-- 0 --(0)-
+       |    |    |         |         |  
+- 0 --(5)--(6)--(7)--(6)-- 0   (4)--(5)-
+       |    |         |                 
+       |    |         |                 
+- 0 --(6)   0   (3)--(0)-- 0 --(5)   0 -
        |    |         |              |  
        |    |         |              |  
-  0 --(4)--(9)-- 0 --(6)--(5)-- 0    0  
-  |    |    |         |    |    |    |  
-  |    |    |         |    |    |    |  
-- 0    0    0   (0)  (7)   0   (5)   0 -
-       |    |    |         |            
-       |    |    |         |            
--(5)   0 --(7)-- 0   (5)--(7)-- 0 --(9)-
-                           |         |  
-                           |         |  
- (5)-- 0   (8)  (3)  (7)-- 0    0 -- 0  
-       |    |    |              |       
+ (5)--(5)  (7)  (4)--(4]-- 0 -- 0 -- 0  
+       |              |                 
+       |              |                 
+- 0 -- 0   (5)   0 --(0)-- 0   (8)  (0)-
+            |    |    |    |    |       
+            |    |    |    |    |       
+-(5)  (6)  (0)--(0)  (5)  (6)   0    0 -
+       |    |    |              |    |  
+       |    |    |              |    |  
+ (5)--(8)-- 0    0   (0)  [*)--(5)   0  
+                 |    |         |    |  
+                 |    |         |    |  
+- 0 -- 0   (0)--(5)-- 0   (9)--(0)--(0)-
+       |         |                      
+       |         |                      
+ (7)--(3)-- 0   (6)--(4)   0 -- 0 -- 0  
+       |    |    |         |         |  
 
 -------------------
 The player state now is:
 ---- Player Description ----
 Name : Tonnie
-Position : (2, 6)
+Position : (5, 5)
 Treasures : 
-{DIAMONDS=8, SAPPHIRES=9, RUBIES=9}
+{DIAMONDS=27, SAPPHIRES=20, RUBIES=27}
 ---- End Of Description ----
 
 -------------------
 The Location description is:
 ---- Location Description ----
-Player is currently at : (2, 6)
+Player is currently at : (5, 5)
 This place is a cave
 Treasures at this location : 
-{DIAMONDS=3, SAPPHIRES=2, RUBIES=2}
+{DIAMONDS=1, SAPPHIRES=3, RUBIES=3}
 ---- End Of Description ----
 
 -------------------
 Now we start the game:
-Directions : [+EAST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +EAST, +WEST, +WEST, +EAST, +EAST, +SOUTH, +NORTH, +SOUTH, +WEST, +WEST, +EAST, +EAST, +EAST, +SOUTH, +EAST, +SOUTH, +SOUTH, +EAST, +WEST, +EAST, +WEST, +EAST, +NORTH, +SOUTH, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +NORTH, +NORTH, +EAST, +EAST, +WEST, +WEST, +EAST, +EAST, +NORTH, 
+Directions : [+EAST, +SOUTH, +EAST, +NORTH, +NORTH, +SOUTH, +SOUTH, +WEST, +EAST, +WEST, +NORTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +SOUTH, +EAST, +EAST, +EAST, +WEST, +WEST, +NORTH, +SOUTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +WEST, +EAST, +WEST, +EAST, +EAST, +NORTH, +SOUTH, +EAST, +EAST, +SOUTH, +SOUTH, +SOUTH, +WEST, +WEST, +EAST, +WEST, +EAST, +EAST, +NORTH, +NORTH, +SOUTH, +WEST, +EAST, +WEST, +EAST, +WEST, +EAST, +EAST, +EAST, +EAST, +SOUTH, +EAST, +WEST, +SOUTH, 
 
 The player reached the end ? : Yes
-Takes in total steps : 45
+Takes in total steps : 66
 -------------------
 Now the game result is:
-       |    |    |              |       
-- 0 --(0)  (9)--(6)--(8)-- 0    0 --(7)-
-       |    |         |    |         |  
-       |    |         |    |         |  
- (6)--(8)--(0)-- 0   (0)  (9)  (6)-- 0  
-       |    |    |                      
-       |    |    |                      
-- 0    0   (0)  (5)   0 --(0)  [0)-- 0 -
-  |    |              |                 
-  |    |              |                 
--(0)--(0)-- 0   (0)--(*]  (4)-- 0 --(0)-
+       |    |    |         |         |  
+- 0 --(0)--(0)--(0)--(0)-- 0   (4)--(5)-
+       |    |         |                 
+       |    |         |                 
+- 0 --(0)   0   (3)--(0)-- 0 --(5)   0 -
        |    |         |              |  
        |    |         |              |  
-  0 --(0)--(0)-- 0 --(0)--(5)-- 0    0  
-  |    |    |         |    |    |    |  
-  |    |    |         |    |    |    |  
-- 0    0    0   (0)  (7)   0   (5)   0 -
-       |    |    |         |            
-       |    |    |         |            
--(5)   0 --(0)-- 0   (5)--(7)-- 0 --(9)-
-                           |         |  
-                           |         |  
- (5)-- 0   (8)  (3)  (7)-- 0    0 -- 0  
-       |    |    |              |       
+ (5)--(5)  (7)  (4)--(*]-- 0 -- 0 -- 0  
+       |              |                 
+       |              |                 
+- 0 -- 0   (5)   0 --(0)-- 0   (8)  (0)-
+            |    |    |    |    |       
+            |    |    |    |    |       
+-(5)  (6)  (0)--(0)  (5)  (6)   0    0 -
+       |    |    |              |    |  
+       |    |    |              |    |  
+ (5)--(8)-- 0    0   (0)  [0)--(0)   0  
+                 |    |         |    |  
+                 |    |         |    |  
+- 0 -- 0   (0)--(5)-- 0   (0)--(0)--(0)-
+       |         |                      
+       |         |                      
+ (7)--(0)-- 0   (6)--(4)   0 -- 0 -- 0  
+       |    |    |         |         |  
 
 -------------------
 Now the player description is:
 ---- Player Description ----
 Name : Tonnie
-Position : (3, 4)
+Position : (2, 4)
 Treasures : 
-{DIAMONDS=23, SAPPHIRES=20, RUBIES=25}
+{DIAMONDS=40, SAPPHIRES=40, RUBIES=48}
 ---- End Of Description ----
 
 ---------END----------
